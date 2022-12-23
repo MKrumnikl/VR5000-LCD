@@ -120,33 +120,33 @@ const struct sLcdLabels LcdLabels[] = {
 
 // 7segment digits 
 const struct sLcd7Digits Lcd7Digits[] = {
-  {4, 4, 0xA, 282   , 2+3 , 3, 13 },  // f 1st step
-  {4, 4, 9  , 282+3 , 2+16, 11, 3 },  // g 1st step
-  {4, 4, 8  , 282+14, 2+3 , 3, 13 },  // b 1st step
-  {4, 5, 7  , 282+3 , 2   , 11, 3 },  // a 1st step
-  {2, 4, 9  , 282+3 , 2+32, 11, 3 },  // d 1st step
-  {2, 4, 8  , 282+14, 2+19, 3 ,13 },  // c 1st step
-  {2, 4, 0XA, 282   , 2+19, 3 ,13 },  // e 1st step
+  {4, 4, 5  , 282   , 2+3 , 3, 13 },  // f 1st step
+  {4, 4, 6  , 282+3 , 2+16, 11, 3 },  // g 1st step
+  {4, 4, 7  , 282+14, 2+3 , 3, 13 },  // b 1st step
+  {4, 5, 8  , 282+3 , 2   , 11, 3 },  // a 1st step
+  {2, 4, 6  , 282+3 , 2+32, 11, 3 },  // d 1st step
+  {2, 4, 7  , 282+14, 2+19, 3 ,13 },  // c 1st step
+  {2, 4, 5  , 282   , 2+19, 3 ,13 },  // e 1st step
 
-  {2, 4, 7  , 282+18, 2+34, 3 , 3 },  // dot 1st step
+  {2, 4, 8  , 282+18, 2+34, 3 , 3 },  // dot 1st step
 
-  {4, 4, 6  , 304   , 2+3 , 3, 13 },  // f 2nd step
-  {4, 4, 5  , 304+3 , 2+16, 11, 3 },  // g 2nd step
-  {4, 4, 4  , 304+14, 2+3 , 3, 13 },  // b 2nd step
-  {4, 5, 0xE, 304+3 , 2   , 11, 3 },  // a 2nd step
-  {2, 4, 5  , 304+3 , 2+32, 11, 3 },  // d 2nd step
-  {2, 4, 4  , 304+14, 2+19, 3 ,13 },  // c 2nd step
-  {2, 4, 6  , 304   , 2+19, 3 ,13 },  // e 2nd step
+  {4, 4, 9  , 304   , 2+3 , 3, 13 },  // f 2nd step
+  {4, 4, 0xA, 304+3 , 2+16, 11, 3 },  // g 2nd step
+  {4, 4, 0xB, 304+14, 2+3 , 3, 13 },  // b 2nd step
+  {4, 5, 1  , 304+3 , 2   , 11, 3 },  // a 2nd step
+  {2, 4, 0xA, 304+3 , 2+32, 11, 3 },  // d 2nd step
+  {2, 4, 0xB, 304+14, 2+19, 3 ,13 },  // c 2nd step
+  {2, 4, 9  , 304   , 2+19, 3 ,13 },  // e 2nd step
 
-  {2, 4, 3  , 304+18, 2+34, 3 , 3 },  // dot 2nd step
+  {2, 4, 0xC, 304+18, 2+34, 3 , 3 },  // dot 2nd step
 
-  {4, 5, 0xF, 326   , 2+3 , 3, 13 },  // f 3rd step
-  {4, 4, 1  , 326+3 , 2+16, 11, 3 },  // g 3rd step
-  {4, 4, 0  , 326+14, 2+3 , 3, 13 },  // b 3rd step
-  {4, 5, 0xF, 326+3 , 2   , 11, 3 },  // a 3rd step
-  {4, 4, 2  , 326+3 , 2+32, 11, 3 },  // d 3rd step
-  {2, 4, 0  , 326+14, 2+19, 3 ,13 },  // c 3rd step
-  {2, 4, 2  , 326   , 2+19, 3 ,13 }   // e 3rd step
+  {4, 5, 0  , 326   , 2+3 , 3, 13 },  // f 3rd step
+  {4, 4, 0xE, 326+3 , 2+16, 11, 3 },  // g 3rd step
+  {4, 4, 0xF, 326+14, 2+3 , 3, 13 },  // b 3rd step
+  {4, 5, 0  , 326+3 , 2   , 11, 3 },  // a 3rd step
+  {4, 4, 0xD, 326+3 , 2+32, 11, 3 },  // d 3rd step
+  {2, 4, 0xF, 326+14, 2+19, 3 ,13 },  // c 3rd step
+  {2, 4, 0xD, 326   , 2+19, 3 ,13 }   // e 3rd step
 };
 
 // edit  packages/STMicroelectronics/hardware/stm32/2.3.0/libraries/SrcWrapper/src/stm32/interrupt.cpp
@@ -272,7 +272,7 @@ void parseNext(unsigned short c) {
       }
       // 7digits
       for (int i = 0; i < sizeof(Lcd7Digits); i++) {
-        if (((cmd[0] & 0x000F) == Lcd7Digits[i].bank_id) && ((cmd[1] & 0x000F) == Lcd7Digits[i].pos_id) && ((cmd[2] & 0x000F) == 0xF - Lcd7Digits[i].bit_id)) {
+        if (((cmd[0] & 0x000F) == Lcd7Digits[i].bank_id) && ((cmd[1] & 0x000F) == Lcd7Digits[i].pos_id) && ((cmd[2] & 0x000F) == Lcd7Digits[i].bit_id)) {
           if ((cmd[4] & 0x0001) != 0) {
             mFillRect(Lcd7Digits[i].posx, Lcd7Digits[i].posy, Lcd7Digits[i].w, Lcd7Digits[i].h, TFT_WHITE);
           } else {
