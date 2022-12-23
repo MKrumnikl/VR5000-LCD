@@ -7,7 +7,7 @@ Older Yaesu VR-5000 LCD displays often suffer from loss of vertical LCD lines. S
 
 # TODO
 - Missing some symbols/icons
-- Missing decoding of seven-segment displays (step, bank)
+- Missing decoding of seven-segment displays (~~step~~, bank)
 - Speed improvement
 
 Binaries are available in __/build__ directory.
