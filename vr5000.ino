@@ -85,18 +85,18 @@ const struct sLcdLabels LcdLabels[] = {
   { 4, 2, 0xD, "ATT", 148, 2, TFT_BLACK, TFT_YELLOW },  //OK
   { 4, 3, 2, "NB", 184, 2, TFT_WHITE, TFT_BLACK },      //OK
   { 2, 5, 1, "STEP", 230, 2, TFT_WHITE, TFT_BLACK},     // visible same as Hz
-                                                        // {0, 0, "DELAY",381, 2, 0, TFT_BLACK, TFT_WHITE},
-                                                        // {0, 0, "HOLD", 430, 2, 0, TFT_BLACK, TFT_WHITE},
+                                                        //{ 2, 4, 0xE, "DELAY", 381, 2, TFT_WHITE, TFT_BLACK},
+  { 4, 7, 5, "HOLD", 430, 2, TFT_WHITE, TFT_BLACK},
 
   { 2, 0, 9, "LOCK", 3, 23, TFT_BLACK, TFT_RED },  //OK
                                                    // {0, 0, "PROG",  40, 23, TFT_BLACK, TFT_WHITE},
                                                    // {0, 0, "SLEEP", 93, 23, TFT_BLACK, TFT_WHITE},
                                                    // {0, 0, "ON",   148, 23, TFT_BLACK, TFT_WHITE},
                                                    // {0, 0, "REC",  184, 23, TFT_BLACK, TFT_WHITE},
-  { 2, 2, 7, "AUTO", 230, 23, TFT_WHITE, TFT_BLACK },
+  { 2, 4, 4, "AUTO", 230, 23, TFT_WHITE, TFT_BLACK },
   { 2, 5, 0,    "K", 346, 23, TFT_WHITE, TFT_BLACK},
   { 2, 5, 1,   "Hz", 358, 23, TFT_WHITE, TFT_BLACK},
-                                                   // {0, 0, "PAUSE",381, 23, TFT_BLACK, TFT_WHITE},
+  { 2, 4,0xE, "PAUSE",385, 23, TFT_WHITE, TFT_BLACK},
                                                    // {0, 0, "VCS+", 430, 23, TFT_BLACK, TFT_WHITE},
   { 2, 0, 4, "LSB", 3, 43, TFT_WHITE, TFT_BLACK },     //OK
   { 2, 0, 0xF, "USB", 45, 43, TFT_WHITE, TFT_BLACK },  //OK
